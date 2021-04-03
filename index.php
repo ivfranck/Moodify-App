@@ -1,12 +1,5 @@
 <?php include_once "header_footer/header.php";?>
-<<<<<<< HEAD
-<h1>Welcome page</h1>
-<?php
-if(isset($_SESSION["userFirstName"])){
-    echo "<p>Hello there " . $_SESSION["userFirstName"] . "</p>";
-}
-?>
-=======
+
     <section id="hero">
 
         <div class="hero-text">
@@ -222,4 +215,3 @@ if(isset($_SESSION["userFirstName"])){
 </body>
 
 </html>
->>>>>>> 58addc315b63608929b2576b810311d04a0211f2
