@@ -1,0 +1,39 @@
+.diary-ent {
+    margin: 5%;
+    display: grid;
+    justify-content: center;
+  }
+
+  .title {
+    color: #16697A;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .entry-textbox {
+    width: 20em;
+    height: 10em;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 25px;
+    background-color:#55fabe;
+    border: unset;
+    border: none;
+    border-color: none;
+  }
+  
+  .entry-textbox:focus {
+    outline: none;
+  }
+  
+  #entryForm .button {
+    border: unset;
+    border-radius: 10px;
+    padding: 1em;
+    margin-left: 75%;
+  }
+  .button:hover{
+    background: #1dc8cd;
+    border: 2px solid #1dc8cd;
+  }
+  
