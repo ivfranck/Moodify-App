@@ -213,7 +213,7 @@
     <br><br>
 
     <?php
-        include "./include/footer.php";
+        include "header_footer/footer.php";
     ?>
     <script src="/js/index.js"></script>
 </body>
