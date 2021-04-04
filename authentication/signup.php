@@ -17,8 +17,8 @@
                     <label for="lastname" class="label-form">Lastname</label>
                 </div>
                 <div class="form-field col-lg-6">
-                    <input id="number" class="input-text" type="text" name="number" required>
-                    <label for="number" class="label-form">Phone Number</label>
+                    <input id="number" class="input-text" type="text" name="number" value="0" required>
+                    <label for="number" class="label-form">Phone Number (+32)</label>
                 </div>
                 <div class="form-field col-lg-6">
                     <input id="email" class="input-text" type="email" name="email" required>
@@ -32,10 +32,10 @@
                 <?php
                 if(isset($_GET["error"])){
                     if($_GET["error"] == "invalidUid"){
-                        echo "<p>Choose a proper username!</p>";
+                        echo "<p style='color: red'>Choose a proper username!</p>";
                     }
                     elseif ($_GET["error"] == "usernametaken"){
-                        echo "<p>Username already taken</p>";
+                        echo "<p style='color: red'>Username already taken</p>";
                     }
                     elseif ($_GET["error"] == "none"){
                         echo "<p>You have successfully signed up!</p>";
@@ -44,13 +44,14 @@
                 }
                 ?>
 
-                <div class="form-field col-lg-12">
-                    <input class="submit-btn" type="submit" name="submit">
-                </div>
+
+                    <button class="btn btn-primary btn-lg btn-block" style="background-color: #1DC8CD; border-color: #1DC8CD" type="submit" name="submit">Submit</button>
+
             </div>
         </div>
         </form>
 
     </section>
+
 </body>
 </html>

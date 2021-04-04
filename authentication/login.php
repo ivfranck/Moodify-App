@@ -17,14 +17,14 @@
                 <?php
                 if(isset($_GET["error"])){
                     if($_GET["error"] == "wronglogin"){
-                        echo "<p>Incorrect Credentials. Try Again</p>";
+                        echo "<p style='color: red'>Username or password incorrect!</p>";
                     }
                 }
                 ?>
 
-                <div class="form-field col-lg-12">
-                    <input class="submit-btn" type="submit" name="submit_login">
-                </div>
+
+                    <input class="btn btn-primary btn-lg btn-block" style="background-color: #1DC8CD; border-color: #1DC8CD" type="submit" name="submit_login">
+
             </div>
         </div>
     </form>

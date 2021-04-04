@@ -7,7 +7,11 @@
             <p>
                 Mood has to be controlled, Otherwise, it's your master.
             </p>
-            <a href='authentication/signup.php' class="btn-create-account">Create Account</a>
+            <?php
+        if(!isset($_SESSION["userName"])){
+            echo "<a href='authentication/signup.php' class='btn-create-account'>Create Account</a>";
+        }
+        ?>
         </div>
 
 

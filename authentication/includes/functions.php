@@ -85,8 +85,75 @@ function loginUser($conn, $userid, $password){
         $_SESSION["userFirstName"] = $uidExists["userFirstName"];
         $_SESSION["userLastName"] = $uidExists["userLastName"];
         $_SESSION["userEmail"] = $uidExists["userEmail"];
+        $_SESSION["userGSM"] = $uidExists["userGSM"];
+
 
         header("Location: /../index.php");
         exit();
     }
+}
+
+function editUser($conn, $useruid, $firstname, $lastname, $email, $number, $password){
+    $sql = "update `users` set `userFirstname`= ?, `userLastname`= ?, `userEmail`= ?, `userGSM`= ?, `userPassword`= ? where `userName`= ?;";
+
+    //to make sure its more secure to prevent sql injection
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("Location: ../profile.php?error=stmtfailed");
+        exit();
+    }
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "ssssss", $firstname, $lastname, $email, $number, $hashedPassword, $useruid);
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    $uidExists = uidExists($conn, $useruid, $password);
+    session_start();
+    $_SESSION["userId"] = $uidExists["userId"];
+    $_SESSION["userName"] = $uidExists["userName"];
+    $_SESSION["userFirstName"] = $uidExists["userFirstName"];
+    $_SESSION["userLastName"] = $uidExists["userLastName"];
+    $_SESSION["userEmail"] = $uidExists["userEmail"];
+    $_SESSION["userGSM"] = $uidExists["userGSM"];
+
+    header("Location: ../profile.php?error=none");
+    exit();
+}
+
+function deleteUser($conn, $userid, $password){
+    $sql = "delete from `users` where `userName` = ?;";
+
+    $uidExists = uidExists($conn, $userid, $password);
+
+
+    //check if password is correct
+    $passhashed = $uidExists["userPassword"];
+    $checkpass = password_verify($password, $passhashed);
+    //to make sure its more secure to prevent sql injection
+    $stmt = mysqli_stmt_init($conn);
+    if ($checkpass === false){
+        header("Location: ../profile.php?error=wrongpass");
+        exit();
+    }
+    else{
+        if(!mysqli_stmt_prepare($stmt, $sql)){
+            header("Location: ../profile.php?error=stmtfailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $userid);
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        session_start();
+        session_unset();
+        session_destroy();
+        header("Location: /../index.php");
+        exit();
+    }
+
+
 }
