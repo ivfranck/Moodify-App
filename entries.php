@@ -135,12 +135,12 @@
             </tr>
         </table><br/>
         <p>-OR-</p>
-        <input type="text" id="mood" placeholder="Your current mood"></p>
+        <input type="text" id="mood" name="mood" placeholder="Your current mood"></p>
     </div>
     <div class="tab">
         <p>Tell us about your day</p>
         <p>
-            <textarea class="entry-textbox" placeholder="What happened today?"></textarea>
+            <textarea class="entry-textbox" name="journal" placeholder="What happened today?"></textarea>
         </p>
     </div>
     <div class="tab"><p>Pick a picture that best describes your mood</p>

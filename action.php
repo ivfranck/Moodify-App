@@ -1,15 +1,14 @@
 <?php
 if (isset($_POST["nextBtn"])){
-    $one = $_POST["fname"];
-    $two = $_POST["email"];
-    $three = $_POST["dd"];
-    $four = $_POST["uname"];
+    $one = $_POST["mood"];
+    $two = $_POST["journal"];
+    $three = $_POST["pic"];
 
     //db-handler
     require_once "authentication/includes/db-users.php";
 
 
-    $sql = "insert into `test_table` (`name`,`email`, `day`, `password`) values (?, ?, ?, ?);";
+    $sql = "insert into `test_table` (`mood`,`journal`, `picture`) values (?, ?, ?);";
 
     //to make sure its more secure to prevent sql injection
     $stmt = mysqli_stmt_init($conn);
@@ -19,7 +18,7 @@ if (isset($_POST["nextBtn"])){
     }
 
 
-    mysqli_stmt_bind_param($stmt, "ssss", $one, $two, $three, $four);
+    mysqli_stmt_bind_param($stmt, "sss", $one, $two, $three);
     mysqli_stmt_execute($stmt);
 
     mysqli_stmt_close($stmt);
