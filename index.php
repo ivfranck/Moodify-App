@@ -215,7 +215,7 @@
     <?php
         include "header_footer/footer.php";
     ?>
-    <script src="/js/index.js"></script>
+
 </body>
 
 </html>

@@ -34,3 +34,4 @@
     </div>
 
 </footer>
+<script src="/js/index.js"></script>

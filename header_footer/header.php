@@ -43,7 +43,7 @@ session_start();
         <?php
         if(isset($_SESSION["userName"])){
             echo "<li><a href='#'>About</a></li>";
-            echo "<li><a href='../diary.php'>Diary</a></li>";
+            echo "<li><a href='../entries.php'>Diary</a></li>";
             echo "<li><a href='../authentication/profile.php'>Profile</a></li>";
             echo "<li><a href='../authentication/includes/logout-inc.php'>Logout</a></li>";
         }

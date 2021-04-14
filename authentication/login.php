@@ -30,5 +30,9 @@
     </form>
 
 </section>
+
+<?php
+include "../header_footer/footer.php";
+?>
 </body>
 </html>

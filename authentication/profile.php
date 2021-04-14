@@ -101,4 +101,6 @@
 
 </div>
 
-
+<?php
+include "../header_footer/footer.php";
+?>
