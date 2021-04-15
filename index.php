@@ -1,216 +1,190 @@
 <?php include_once "header_footer/header.php";?>
 
-    <section id="hero">
+<section id="hero">
 
-        <div class="hero-text">
-            <h3>Welcome to Moodify</h3>
-            <p>
-                Mood has to be controlled, Otherwise, it's your master.
-            </p>
-            <?php
+    <div class="hero-text">
+        <h3>Welcome to Moodify</h3>
+        <p>
+            Mood has to be controlled, Otherwise, it's your master.
+        </p>
+        <?php
         if(!isset($_SESSION["userName"])){
             echo "<a href='authentication/signup.php' class='btn-create-account'>Create Account</a>";
         }
         ?>
+    </div>
+
+
+</section>
+<!-- End Hero Section -->
+<br>
+<br><br>
+
+<!--Features-->
+<div class="feature_header" style="text-align: center;font-family: 'Montserrat', sans-serif;">
+    <p>Features</p>
+</div>
+<br><br><br>
+<div class="wrappper1">
+    <div class="column">
+        <div class="imgBx">
+            <img src="images/bgsmall.jpg" alt="">
         </div>
-
-
-    </section>
-    <!-- End Hero Section -->
-    <br>
-    <br><br>
-    <div class="feature_header" style="text-align: center;font-family: 'Montserrat', sans-serif;">
-        <p>Features</p>
-    </div>
-    <br><br><br>
-    <div class="wrappper1">
-        <table class="tableOne" style="width: 80%;margin-left: 10%;border-collapse: collapse;">
-            <tr>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Feature</h1>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Feature</h1>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Feature</h1>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Feature</h1>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Feature</h1>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Feature</h1>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-            </tr>
-        </table>
-    </div>
-    <br><br><br>
-    <div class="About_us">
-        <p class="para1">About us <br><br><br></p>
-    </div>
-    <div class="para2">
-        <table class="tableOne" style="width: 95%;margin-left: 2.5%;">
-            <tr>
-                <th>
-                    <div class="img_Abt">
-                        <img src="/images/bgsmall.jpg" alt="">
-                    </div>
-                </th>
-                <th>
-                    <p class="section-description" style="font-size: 14;font-family: 'Montserrat', sans-serif; ;">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque<br>
-                        sunt in culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                </th>
-            </tr>
-        </table>
-        <br><br><br>
+        <div class="details">
+            <div class="content">
+                <h1>Feature</h1>
+            </div>
+        </div>
     </div>
 
-    <br><br><br><br><br>
-    <div class="meetTheTeam">
-        <p>Meet the team</p>
+    <div class="clearFloat"></div>
+    <div class="column">
+        <div class="imgBx">
+            <img src="images/bgsmall.jpg" alt="">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h1>Feature</h1>
+            </div>
+        </div>
     </div>
-    <br><br><br>
-    <div class="meet_the_team">
-        <table class="tableTeam" style="width: 90%;margin-left: 5%;">
-            <tr>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Moses Njau</h1>
-                                <ul>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-github"></i></a></li>
-                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>
-                                    Anass Saissi Hassani </h1>
-                                <ul>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-github"></i></a></li>
-                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Franck Ivan</h1>
-                                <ul>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-github"></i></a></li>
-                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-                <th>
-                    <div class="column">
-                        <div class="imgBx">
-                            <img src="/images/bgsmall.jpg" alt="">
-                        </div>
-                        <div class="details">
-                            <div class="content">
-                                <h1>Ashton Pettit</h1>
-                                <ul>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-github"></i></a></li>
-                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </th>
-            </tr>
-        </table>
+
+    <div class="clearFloat"></div>
+    <div class="column">
+        <div class="imgBx">
+            <img src="images/bgsmall.jpg" alt="">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h1>Feature</h1>
+            </div>
+        </div>
     </div>
-    <br><br>
+
+    <div class="clearFloat"></div>
+    <div class="column">
+        <div class="imgBx">
+            <img src="images/bgsmall.jpg" alt="">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h1>Feature</h1>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div style="clear:both;"></div>
+<!--About Us-->
+<div class="About_us">
+    <div class="au_title">
+        <p>About Us</p>
+    </div>
+    <div class="au_details">
+        <div class="au_image">
+            <img src="images/bgsmall.jpg" alt="">
+        </div>
+        <div class="au_det_details">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Meet the team-->
+<div class="meetTheTeam">
+    <p>Meet the team</p>
+</div>
+
+<div class="meet_the_team">
+
+    <div class="column">
+        <div class="imgBx">
+            <img src="images/bgsmall.jpg" alt="">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h1>Moses Njau</h1>
+                <ul>
+                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-github"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearFloat"></div>
+    <div class="column">
+        <div class="imgBx">
+            <img src="images/bgsmall.jpg" alt="">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h1>
+                    Anass Saissi Hassani </h1>
+                <ul>
+                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-github"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearFloat"></div>
+    <div class="column">
+        <div class="imgBx">
+            <img src="images/bgsmall.jpg" alt="">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h1>Franck Ivan</h1>
+                <ul>
+                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-github"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearFloat"></div>
+    <div class="column">
+        <div class="imgBx">
+            <img src="images/bgsmall.jpg" alt="">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h1>Ashton Pettit</h1>
+                <ul>
+                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-github"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="clear:both;"></div>
+<div style="height: 50px"></div>
+<!--Footer-->
 
     <?php
         include "header_footer/footer.php";

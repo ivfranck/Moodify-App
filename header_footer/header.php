@@ -29,7 +29,7 @@ session_start();
 
 <body>
 
-<nav>
+<nav class = "stroke">
     <div class="logo">
         <h4>Moodify</h4>
     </div>
