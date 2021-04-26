@@ -1,0 +1,264 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*******************************Calendar Top Navigation*********************************/
+div#calendar{
+  margin:0px auto;
+  padding:0px;
+  width: 700px;
+  font-family:Helvetica, "Times New Roman", Times, serif;
+}
+ 
+div#calendar div.box{
+    position:relative;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:40px;
+    background-color:   #787878 ;      
+}
+ 
+div#calendar div.header{
+    line-height:40px;  
+    vertical-align:middle;
+    position:absolute;
+    left:11px;
+    top:0px;
+    width:682px;
+    height:40px;   
+    text-align:center;
+}
+ 
+div#calendar div.header a.prev,div#calendar div.header a.next{ 
+    position:absolute;
+    top:0px;   
+    height: 17px;
+    display:block;
+    cursor:pointer;
+    text-decoration:none;
+    color:#FFF;
+}
+ 
+div#calendar div.header span.title{
+    color:#FFF;
+    font-size:18px;
+}
+ 
+ 
+div#calendar div.header a.prev{
+    left:0px;
+}
+ 
+div#calendar div.header a.next{
+    right:0px;
+}
+
+
+ /*******************************Calendar Content Cells*********************************/
+
+.dates {
+  height: 95px;
+  display: flex;
+  flex-direction: row;
+  margin: 4px, 4px;
+  padding: 4px;
+  width: 694px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.days {
+  padding: 20px;
+  border: solid 1px black;
+  height: 15px;
+  text-align: center;
+  
+}
+
+.days.today {
+  padding: 30px;
+  background-color: rgb(177, 222, 135) !important;
+}
+
+/*******************************Main Content Divs*********************************/
+
+.content {
+  display: none;
+}
+
+.content.active {
+  height: 350px;
+  width: 950px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content.today {
+  padding: 0px;
+}
+
+.numID {
+  display: none;
+}
+
+.colourSelector {
+  display: none;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+img {
+  height: 200px;
+  width: auto;
+}
+
+.insideDiv {
+  padding: 10px;
+}
+
+/*******************************Diary Entry Form*********************************/
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 100%;
+  min-width: 300px;
+}
+
+h1, p, td {
+  text-align: center;
+}
+.moods {
+  margin: auto;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #1DC8CD;
+}
+
+
+/*******************************Choose Image CSS*********************************/
+
+body {
+  background-color: #f6f6f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.gallery-container {
+  width: 870px;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.gallery-item {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  background-color: white;
+  
+  margin: 10px;
+}
+.myButton {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #e1e2ed;
+  justify-content: center;
+  align-items: center;
+  
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color:#bab1ba;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
