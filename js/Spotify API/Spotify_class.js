@@ -11,6 +11,7 @@ class SpotifyAPI {
         };
         this.playlistName;
         this.playlistId;
+        this.trackImage;
     }
 
     // request token to access spotify data
@@ -26,7 +27,7 @@ class SpotifyAPI {
         });
 
         const jsonData = await response.json();
-        //console.log(jsonData);
+
         return jsonData.access_token;
     }
 
@@ -94,7 +95,6 @@ class SpotifyAPI {
 
     // get relevant track details
     async getTrackInfo(data){
-        let trackImage;
         let trackName;
         let trackArtist;
         let trackId;
@@ -105,11 +105,11 @@ class SpotifyAPI {
         const track = tracksJson[trackSelector];
 
         // get and return the track's details
-        trackImage = track.track.album.images[0].url;
+        this.trackImage = track.track.album.images[0].url;
         trackName = track.track.name;
         trackArtist = track.track.artists[0].name;
         trackId = track.track.id;
-        return [trackImage, trackName, trackArtist, trackId];
+        return [this.trackImage, trackName, trackArtist, trackId];
     }
 
     // display all tracks on html page
@@ -186,5 +186,3 @@ var runButton = document.getElementById("btn_submit");
 runButton.addEventListener('click', function(){
     run.loadApp();
 })
-
-
