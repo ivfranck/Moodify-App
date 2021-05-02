@@ -65,3 +65,79 @@ $checkpass = password_verify($password, $passhashed);
 ```
 
 We used php's _$\_SESSION_ to keep track of which user is online. We added a _session_start()_ on the site's header, which will be used on all pages. This makes it easier to keep track of the user's activity and data.
+
+---
+### Spotify API
+The [Spotify API](js/Spotify API/Spotify_class.js) was used to recommend music to the user daily. For this to be possible, it is critical to have a client id and client secret, which are acquired upon creation of an app on Spotify.
+With these credentials, you need to send a POST request to Spotify along with their specified headers and body:
+```
+const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/x-www-form-urlencoded',
+                'Authorization' : 'Basic ' + btoa(this.clientId + ':' + this.clientSecret)
+            },
+            body: 'grant_type=client_credentials'
+        });
+```
+This then provides the required **access token** which is needed to access data from the Spotify API.
+The whole procedure for authorization can be found directly on [Spotify's developer section](https://developer.spotify.com/documentation/general/guides/authorization-guide/).
+
+Once access is granted, you can use the requested access token to find whatever you want. This access token was kept in a hidden html tag.
+When kept on the html page, it helps reduce the amounts of requests we send to the Spotify server, so instead of constantly requesting for an access
+token, we can just reuse the already requested stored one:
+```
+// store token in a hidden html field to reuse when needed
+storeToken(value) {
+    document.querySelector(this.DOMElements.htmlToken).value = value;
+}
+
+// get the hidden stored token
+getStoredToken() {
+    return {
+        token: document.querySelector(this.DOMElements.htmlToken).value
+    }
+}
+```
+For this project, we needed to extract playlists from the **mood** category.
+We specified the type of playlists we need by setting keywords which will check if a particular keyword in the array is contained in the name of a playlist:
+
+```
+// use keywords to get relevant playlists
+const keywords = ["happy", "positive", "good"];
+```
+
+When found, we stored them in an object. This allows easy access to the name and id of that particular playlist later in the code:
+```
+const playlists = {};
+const playlistsJson = jsonData.playlists.items;
+
+for (let i = 0; i < keywords.length; i++){
+    for (let j = 0; j < playlistsJson.length; j++){
+        if (playlistsJson[j].name.toLowerCase().includes(keywords[i])){
+            playlists[playlistsJson[j].name] = playlistsJson[j].id;
+        }
+    }
+}
+```
+
+From there, we selected a random playlist from the object and extracted all its contained tracks.
+
+**Saving the track name to the database:**
+
+Once we have the details of the recommended track, we need to store it in the database. To do this we used ajax since the track details are stored in a JS variable. This was sent through a **POST** method to a PHP file where it will be processed and sent
+to the database:
+```
+const userid = document.querySelector(this.DOMElements.userSessionId).value;
+const trackDetails = this.trackName + " - " + this.trackArtist + "," + this.trackId + "," + userid;
+$.ajax({
+    url: "/../includes/dataStorage.php",
+    method: "post",
+    data: {track : JSON.stringify(trackDetails)},
+    success: function(res2){
+        console.log(res2);
+    }
+})
+```
+
+The [dataStorage.php ](includes/dataStorage.php) file contains all functions that sends over the user's data (from dairy entries) to the database.
