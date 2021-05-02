@@ -17,8 +17,8 @@
                     <label for="lastname" class="label-form">Lastname</label>
                 </div>
                 <div class="form-field col-lg-6">
-                    <input id="number" class="input-text" type="text" name="number" value="0" required>
-                    <label for="number" class="label-form">Phone Number (+32)</label>
+                    <input id="number" class="input-text" type="text" name="number" value="0" minlength="10" maxlength="11" required>
+                    <label for="number" class="label-form">Phone Number (BE)</label>
                 </div>
                 <div class="form-field col-lg-6">
                     <input id="email" class="input-text" type="email" name="email" required>

@@ -1,9 +1,9 @@
-// TODO: SEND NAME OF TRACK TO DATABASE
 class SpotifyAPI {
     constructor() {
         this.clientId = '2b4f0820988f4612840cb95cd602e966';
         this.clientSecret = 'ba50df53907a43c0a144b32c1aa3c435';
         this.DOMElements = {
+            userSessionId: '#userId',
             buttonSubmit: '#btn_submit',
             divSongDetail: '#song-detail',
             htmlToken: '#hidden_token',
@@ -12,6 +12,10 @@ class SpotifyAPI {
         this.playlistName;
         this.playlistId;
         this.trackImage;
+        this.trackName;
+        this.trackArtist;
+        this.trackId;
+
     }
 
     // request token to access spotify data
@@ -95,10 +99,6 @@ class SpotifyAPI {
 
     // get relevant track details
     async getTrackInfo(data){
-        let trackName;
-        let trackArtist;
-        let trackId;
-
         // select a random track
         const tracksJson = data.items;
         const trackSelector = Math.floor((Math.random() * 10));
@@ -106,10 +106,10 @@ class SpotifyAPI {
 
         // get and return the track's details
         this.trackImage = track.track.album.images[0].url;
-        trackName = track.track.name;
-        trackArtist = track.track.artists[0].name;
-        trackId = track.track.id;
-        return [this.trackImage, trackName, trackArtist, trackId];
+        this.trackName = track.track.name;
+        this.trackArtist = track.track.artists[0].name;
+        this.trackId = track.track.id;
+        return [this.trackImage, this.trackName, this.trackArtist, this.trackId];
     }
 
     // display all tracks on html page
@@ -153,6 +153,20 @@ class SpotifyAPI {
         }
     }
 
+    // transfer track name to php using ajax
+    transferTrackName(){
+        const userid = document.querySelector(this.DOMElements.userSessionId).value;
+        const trackDetails = this.trackName + " - " + this.trackArtist + "," + this.trackId + "," + userid;
+        $.ajax({
+            url: "/../includes/dataStorage.php",
+            method: "post",
+            data: {track : JSON.stringify(trackDetails)},
+            success: function(res2){
+                console.log(res2);
+            }
+        })
+    }
+
     // to run all functions in order
     async loadApp(){
         // get token
@@ -175,6 +189,7 @@ class SpotifyAPI {
         }
         const trackDetails = await this.getTrackInfo(tracks);
         this.createTrackDetail(trackDetails[0], trackDetails[1], trackDetails[2], trackDetails[3]);
+        this.transferTrackName();
 
     }
 

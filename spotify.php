@@ -1,5 +1,10 @@
-<?php include_once "header_footer/header.php";?>
+<?php
+include_once "header_footer/header.php";
 
+if(isset($_SESSION["userId"])){
+    echo "<input type='hidden' id='userId' value=".$_SESSION["userId"].">";
+}
+?>
 <div class="container">
 
         <input type="hidden" id='hidden_token'>
@@ -23,9 +28,11 @@
             </div>
         </div>
     </div>
+
 </div>
 
 
 <script type="text/javascript" src="js/Spotify API/Spotify_class.js"></script>
+<script type="text/javascript" src="js/Spotify%20API/JQuery.js"></script>
 </body>
 </html>

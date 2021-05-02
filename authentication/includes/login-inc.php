@@ -6,8 +6,10 @@ if(isset($_POST["submit_login"])){
 
     require_once "db-users.php";
     require_once "functions.php";
-
-    loginUser($conn, $userid, $password);
+    $connClass = new dbConn();
+    $conn = $connClass->dbconnection();
+    $auth = new Auth();
+    $auth->loginUser($conn, $userid, $password);
 }
 else{
     header("Location: ../login.php");

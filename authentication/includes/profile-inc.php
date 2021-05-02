@@ -10,8 +10,11 @@ if (isset($_POST["profile_btn"])){
     //db-handler
     require_once "db-users.php";
     require_once "functions.php";
+    $connClass = new dbConn();
+    $conn = $connClass->dbconnection();
+    $auth = new Auth();
 
-    editUser($conn, $useruid, $firstname, $lastname, $email, $number, $password);
+    $auth->editUser($conn, $useruid, $firstname, $lastname, $email, $number, $password);
 }
 if (isset($_POST["del_btn"])){
     $useruid = $_POST["useruid"];
@@ -20,9 +23,11 @@ if (isset($_POST["del_btn"])){
     //db-handler
     require_once "db-users.php";
     require_once "functions.php";
+    $connClass = new dbConn();
+    $conn = $connClass->dbconnection();
+    $auth = new Auth();
 
-
-    deleteUser($conn, $useruid, $password);
+    $auth->deleteUser($conn, $useruid, $password);
 }
 else{
     header("Location: ../profile.php");

@@ -27,7 +27,7 @@
                 <form action="includes/profile-inc.php" method="POST">
                     <input type="hidden" name="useruid" value=<?php echo $_SESSION["userName"] ?>>
                     Enter password to confirm
-                    <input type="password" class="form-control" id="pwd" name="password" placeholder="Password" required><br/>
+                    <input type="password" class="form-control" id="pwd-del" name="password" placeholder="Password" required><br/>
 
                     <?php
                     if(isset($_GET["error"])){

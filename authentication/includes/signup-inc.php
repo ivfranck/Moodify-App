@@ -11,20 +11,22 @@ if (isset($_POST["submit"])){
     require_once "db-users.php";
     require_once "functions.php";
     //error handlers
+    $connClass = new dbConn();
+    $conn = $connClass->dbconnection();
+    $auth = new Auth();
 
-
-    if (invalidUid($userid) !== false){
+    if ($auth->invalidUid($userid) !== false){
         header("Location: ../signup.php?error=invalidUid");
         exit();
     }
     //if username already exists
-    if (uidExists($conn, $userid, $email) !== false){
+    if ($auth->uidExists($conn, $userid, $email) !== false){
 
         header("Location: ../signup.php?error=usernametaken");
 
         exit();
     }
-    createUser($conn, $userid, $firstname, $lastname, $email, $number, $password);
+    $auth->createUser($conn, $userid, $firstname, $lastname, $email, $number, $password);
 }
 else{
     header("Location: ../signup.php");
