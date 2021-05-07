@@ -10,16 +10,27 @@
 
         <div class="container">
 
-                <?php include 'calendar.php'; 
+                <?php include 'calendar.php';
+                include 'database.class.php';
+                include 'diary.class.php'; 
                 
                 $calendar = new Calendar();
  
                 echo $calendar->show();
+
+                $diary = new Diary();
+
+                echo $diary->display();
+
+                
                 ?>  
 
-            <?php include 'content.php'; ?>    
+
 
         <script src="js/process.js"></script>
+        <script src="js/choose_pic.js"></script>
+        <script type="text/javascript" src="Spotify API/Spotify_class.js"></script>
+        <script type="text/javascript" src="js/entries.js"></script>
         </div>
     </body>
 </html>

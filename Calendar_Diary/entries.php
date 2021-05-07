@@ -48,10 +48,35 @@
     <div class="tab"><p>Pick a picture that best describes your mood</p>
         <div onclick="location.href='#';" class="gallery-container"></div></br>
         <button id="refreshBtn" value="Refresh Images" TYPE="button" class="myButton"></button></br>
-        <input type="hidden" id="picSelect" value="">
+        <input type="hidden" id="picSelect" value="invalid">
 
     <script src="js/choose_pic.js"></script>
     
+    </div>
+
+    <!-- Spotify -->
+    <div class="tab"><p>Pick a song that best describes your mood</p>
+        <input type="hidden" id='hidden_token'>
+        <br/>
+        <!-- Temporary -->
+        <div class="col-sm-6 row form-group px-0">
+            <button type="button" id="btn_submit" class="btn btn-success col-sm-12">Run</button>
+        </div>
+        <div class="row">
+        <!--Track Detail-->
+        <div class="offset-md-1 col-sm-4" id="song-detail">
+        </div>
+
+        <!--Track list-->
+        <div class="col-sm-6 px-0">
+            <div class="list-group song-list">
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="Spotify API/Spotify_class.js"></script>
+
     </div>
     <div style="overflow:auto;">
         <div style="text-align: center;">
@@ -61,6 +86,7 @@
     </div>
     <!-- Circles which indicates the steps of the form: -->
     <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
