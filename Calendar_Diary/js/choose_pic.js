@@ -17,11 +17,14 @@ function renderGalleryItem(randomNumber){
   /* Putting the data in json format */
     .then((response) => response.json())
       .then((data)=> {    
+
         /* using the randomNumber variable to get a random image */
         let moodImage = data.results[randomNumber];
+
         /* Creating the div and class for the image */
         galleryItem = document.createElement('div');
         galleryItem.classList.add('gallery-item');
+        
         /* Setting the src to the data's url */
         galleryItem.innerHTML = `
           <img id="${moodImage.id}" onclick="reply_click(this.id)" class="gallery-image" src="${moodImage.urls.regular}" alt="gallery image"/>`
@@ -29,39 +32,37 @@ function renderGalleryItem(randomNumber){
     })
 }
 
-/* Getting more images with the API when the refresh button is clicked */
-document.querySelector('#refreshBtn').addEventListener('click', function(){
-  /* Setting num to 1 so browser doesn't get images automatically */
-    num = 1;
-    /* Deleting the images that are there */
-    $galleryContainer.textContent = '';
-    /* Getting new images with for loop */
-    for(let i=0;i<numItemsToGenerate;i++){
-        let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
-        renderGalleryItem(randomImageIndex);
-      }
-})
-
 /* Function to get the images when browser is first loaded */
 function getFirstImages(){
     for(let i=0;i<numItemsToGenerate;i++){
         let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
-        console.log(i)
         renderGalleryItem(randomImageIndex);
       }
 }
+  
+
+
 
 /* Checking to see if browser is loaded */
 if (num == 0){
-    getFirstImages();
+  getFirstImages();
+    /* Setting num to 1 so browser doesn't get images automatically */
+    num = 1;
 }
+
+/* Getting more images with the API when the refresh button is clicked */
+document.querySelector('#refreshBtn').addEventListener('click', function(){
+    /* Deleting the images that are there */
+    $galleryContainer.textContent = '';
+    /* Getting new images with for loop */
+    getFirstImages();
+})
 
 /* Getting the image ID from the API */
 function reply_click(clicked_id)
 {
-    document.getElementById(clicked_id).style.border = "solid 2px black";
-    document.getElementById("#picSelect").value = clicked_id;
+    document.getElementById("picSelect").setAttribute("value", clicked_id);
 }
-    
+
 
 

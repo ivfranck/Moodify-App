@@ -20,6 +20,7 @@ $('.colourSelector').each(function(i){
       }
       else {
         $(this).css("background-color","grey");
+        
       }
     }
       
