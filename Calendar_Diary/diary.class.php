@@ -114,8 +114,7 @@ class Diary extends Query {
                         <div class="tab"><p>Pick a picture that best describes your mood</p>
                             <div class="gallery-container"></div></br>
                             <button id="refreshBtn" value="Refresh Images" TYPE="button" class="myButton"></button></br>
-                            <input type="hidden" id="picSelect" value="invalid">
-                            <script src="js/choose_pic.js"></script> 
+                            <input type="hidden" id="picSelect" value="invalid"> 
                         </div>
 
                         <!-- Spotify -->
