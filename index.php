@@ -28,11 +28,11 @@
 <div class="wrappper1">
     <div class="column">
         <div class="imgBx">
-            <img src="images/bgsmall.jpg" alt="">
+            <img src="images/mood-words.jpg" alt="">
         </div>
         <div class="details">
             <div class="content">
-                <h1>Feature</h1>
+                <h1>Words Describing Your Mood</h1>
             </div>
         </div>
     </div>
@@ -40,11 +40,11 @@
     <div class="clearFloat"></div>
     <div class="column">
         <div class="imgBx">
-            <img src="images/bgsmall.jpg" alt="">
+            <img src="images/diary.jpg" alt="">
         </div>
         <div class="details">
             <div class="content">
-                <h1>Feature</h1>
+                <h1> How Are You Feeling Today? </h1>
             </div>
         </div>
     </div>
@@ -52,11 +52,11 @@
     <div class="clearFloat"></div>
     <div class="column">
         <div class="imgBx">
-            <img src="images/bgsmall.jpg" alt="">
+            <img src="images/moods-pic.jpg" alt="">
         </div>
         <div class="details">
             <div class="content">
-                <h1>Feature</h1>
+                <h1>Images Describing Your Mood</h1>
             </div>
         </div>
     </div>
@@ -64,11 +64,11 @@
     <div class="clearFloat"></div>
     <div class="column">
         <div class="imgBx">
-            <img src="images/bgsmall.jpg" alt="">
+            <img src="images/music_pic.jpg" alt="">
         </div>
         <div class="details">
             <div class="content">
-                <h1>Feature</h1>
+                <h1>Where words fail, music speaks</h1>
             </div>
         </div>
     </div>
@@ -78,26 +78,26 @@
 
 <div style="clear:both;"></div>
 <!--About Us-->
-<div class="About_us">
-    <div class="au_title">
-        <p>About Us</p>
-    </div>
-    <div class="au_details">
-        <div class="au_image">
-            <img src="images/bgsmall.jpg" alt="">
+<section>
+    <div class="About_us" id="abt">
+        <div class="au_title">
+            <p>About Us</p>
         </div>
-        <div class="au_det_details">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
-            </p>
+        <div class="au_details">
+            <div class="au_image">
+                <img src="images/aboutUs_pic.jpg" alt="">
+            </div>
+            <div class="au_det_details">
+                <p>
+                    Good mental wellbeing doesn't mean you're always happy or unaffected by your experiences.
+                    But poor mental wellbeing can make it more difficult to cope with daily life.
+                    We in Moodify are team of young entrepreneurs trying to help the young generation to take care about they're wellbeing
+                    and keep track of they're mental health and mood.
+                </p>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
 
 

@@ -162,7 +162,7 @@ nav.fill .nav-links li a:after {
 #hero {
     width: 100%;
     height: 95vh;
-    background: url("../images/BG.jpg") center top no-repeat;
+    background: url("../images/cover0.jpg") center top no-repeat;
     background-size: cover;
     position: relative;
 }
