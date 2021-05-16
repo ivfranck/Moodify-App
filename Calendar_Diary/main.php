@@ -7,10 +7,13 @@
     </head>
 
     <body>
+    
 
         <div class="container">
 
-                <?php include 'calendar.php';
+                <?php 
+                include '../header_footer/header.php';
+                include 'calendar.php';
                 include 'database.class.php';
                 include 'diary.class.php'; 
                 

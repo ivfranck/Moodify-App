@@ -24,7 +24,7 @@ class Auth{
     }
 
     function uidExists($conn, $userid, $email){
-        $sql = "select * from `users` where `userName` = ? or `userEmail` = ?;";
+        $sql = "select * from `users` where `username` = ? or `useremail` = ?;";
         $stmt = mysqli_stmt_init($conn);
 
         //check for errors that might come up
@@ -50,7 +50,7 @@ class Auth{
     }
 
     function createUser($conn, $userid, $firstname, $lastname, $email, $number, $password){
-        $sql = "insert into `users` (`userName`,`userFirstname`, `userLastname`, `userEmail`, `userGSM`, `userPassword`) values (?, ?, ?, ?, ?, ?);";
+        $sql = "insert into `users` (`username`,`userfirstname`, `userlastname`, `useremail`, `usergsm`, `userpassword`) values (?, ?, ?, ?, ?, ?);";
 
         $stmt = mysqli_stmt_init($conn);
 
@@ -81,7 +81,7 @@ class Auth{
         }
 
         //check if password is correct
-        $passhashed = $uidExists["userPassword"];
+        $passhashed = $uidExists["userpassword"];
         $checkpass = password_verify($password, $passhashed);
 
         if($checkpass === false){
@@ -92,12 +92,12 @@ class Auth{
             session_start();
             //for session its userid in db
             //to use when user is logged in
-            $_SESSION["userId"] = $uidExists["userId"];
-            $_SESSION["userName"] = $uidExists["userName"];
-            $_SESSION["userFirstName"] = $uidExists["userFirstName"];
-            $_SESSION["userLastName"] = $uidExists["userLastName"];
-            $_SESSION["userEmail"] = $uidExists["userEmail"];
-            $_SESSION["userGSM"] = $uidExists["userGSM"];
+            $_SESSION["userId"] = $uidExists["userid"];
+            $_SESSION["userName"] = $uidExists["username"];
+            $_SESSION["userFirstName"] = $uidExists["userfirstname"];
+            $_SESSION["userLastName"] = $uidExists["userlastname"];
+            $_SESSION["userEmail"] = $uidExists["useremail"];
+            $_SESSION["userGSM"] = $uidExists["usergsm"];
 
 
             header("Location: /../index.php");
@@ -106,7 +106,7 @@ class Auth{
     }
 
     function editUser($conn, $useruid, $firstname, $lastname, $email, $number, $password){
-        $sql = "update `users` set `userFirstname`= ?, `userLastname`= ?, `userEmail`= ?, `userGSM`= ?, `userPassword`= ? where `userName`= ?;";
+        $sql = "update `users` set `userfirstname`= ?, `userlastname`= ?, `useremail`= ?, `usergsm`= ?, `userpassword`= ? where `username`= ?;";
 
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -123,24 +123,24 @@ class Auth{
 
         $uidExists = Auth::uidExists($conn, $useruid, $password);
         session_start();
-        $_SESSION["userId"] = $uidExists["userId"];
-        $_SESSION["userName"] = $uidExists["userName"];
-        $_SESSION["userFirstName"] = $uidExists["userFirstName"];
-        $_SESSION["userLastName"] = $uidExists["userLastName"];
-        $_SESSION["userEmail"] = $uidExists["userEmail"];
-        $_SESSION["userGSM"] = $uidExists["userGSM"];
+        $_SESSION["userId"] = $uidExists["userid"];
+        $_SESSION["userName"] = $uidExists["username"];
+        $_SESSION["userFirstName"] = $uidExists["userfirstname"];
+        $_SESSION["userLastName"] = $uidExists["userlastname"];
+        $_SESSION["userEmail"] = $uidExists["useremail"];
+        $_SESSION["userGSM"] = $uidExists["usergsm"];
 
         header("Location: ../profile.php?error=none");
         exit();
     }
 
     function deleteUser($conn, $userid, $password){
-        $sql = "delete from `users` where `userName` = ?;";
+        $sql = "delete from `users` where `username` = ?;";
 
         $uidExists = Auth::uidExists($conn, $userid, $password);
 
         //check if password is correct
-        $passhashed = $uidExists["userPassword"];
+        $passhashed = $uidExists["userpassword"];
         $checkpass = password_verify($password, $passhashed);
 
         $stmt = mysqli_stmt_init($conn);

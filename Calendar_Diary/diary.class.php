@@ -27,35 +27,38 @@ class Diary extends Query {
 
         $yearNum = date("Y",time());           
     } 
+    require_once '../authentication/includes/functions.php';
+    $user = new Auth();
+    $id = $user->userId;
     $monthNum = +$monthNum;
     $date = cal_days_in_month(CAL_GREGORIAN, $monthNum, $yearNum);
 
     /* Using the Query class to get rows */
-    $diaryConent = $this->getQuery($monthNum);
+    $diaryConent = $this->getQuery($id, $monthNum, $yearNum);
         for ($i = 1; $i <= $date; $i++){
             $exists = False;
 
             foreach ($diaryConent as $item){
-                if ($item['day'] == $i) {
+                if ($item['contentday'] == $i) {
                     $exists = True;
                     $content .=
                     '<div class="content">
                     <p class="numID">' . $i . '</p>
-                     <p class="colourSelector">' . $item['day'] . '</p>                
+                     <p class="colourSelector">' . $item['contentday'] . '</p>                
                     <div class="top">
-                        <div class="insideDiv"><img src="https://source.unsplash.com/' . $item['image'] . '/200x200"></div>
+                        <div class="insideDiv"><img src="https://source.unsplash.com/' . $item['contentimageid'] . '/200x200"></div>
                         <div class="insideDiv">
-                            <h2>' . $item['image'] . '</h2><br>
-                            <h2>' . $item['mood'] . '</h2><br>         
+                            <h2>' . $item['contentimageid'] . '</h2><br>
+                            <h2>' . $item['contentmood'] . '</h2><br>         
                         </div>
                     <div class="insideDiv">
                         <p>Song Artist</p><br>
-                        <p>' . $item['song'] . '<p>
+                        <p>' . $item['contentsongid'] . '<p>
                     </div>
                 </div>
 
                 <div class="bottom">
-                    <div class="insideDiv"><p>' . $item['in_text'] . '</p></div>
+                    <div class="insideDiv"><p>' . $item['contenttext'] . '</p></div>
                 </div>
             </div>';
                 }
@@ -64,7 +67,7 @@ class Diary extends Query {
         if ($exists == False){ 
             if ($monthNum == $this->num && $i == $this->today){
             $content .= '<div class="content today">
-            <form id="regForm" action="action.php" method="post">
+            <form id="regForm" action="../includes/dataStorage.php" method="post">
                 <h1 class="idea">Reflection:</h1>
                 <!-- One "tab" for each step in the form: -->
                     <div class="tab">
@@ -114,7 +117,7 @@ class Diary extends Query {
                         <div class="tab"><p>Pick a picture that best describes your mood</p>
                             <div class="gallery-container"></div></br>
                             <button id="refreshBtn" value="Refresh Images" TYPE="button" class="myButton"></button></br>
-                            <input type="hidden" id="picSelect" value="invalid"> 
+                            <input type="hidden" id="picSelect" name="imageid" value="invalid"> 
                         </div>
 
                         <!-- Spotify -->
