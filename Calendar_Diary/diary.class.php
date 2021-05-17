@@ -33,7 +33,9 @@ class Diary extends Query {
     $monthNum = +$monthNum;
     $date = cal_days_in_month(CAL_GREGORIAN, $monthNum, $yearNum);
 
-    /* Using the Query class to get rows */
+    echo "<input type='hidden' id='userId' value=" .$id . ">";
+
+        /* Using the Query class to get rows */
     $diaryConent = $this->getQuery($id, $monthNum, $yearNum);
         for ($i = 1; $i <= $date; $i++){
             $exists = False;
@@ -53,7 +55,7 @@ class Diary extends Query {
                         </div>
                     <div class="insideDiv">
                         <p>Song Artist</p><br>
-                        <p>' . $item['contentsongid'] . '<p>
+                        <p>' . $item['contentsongname'] . '<p>
                     </div>
                 </div>
 
@@ -124,20 +126,9 @@ class Diary extends Query {
                         <div class="tab"><p>Pick a song that best describes your mood</p>
                             <input type="hidden" id="hidden_token">
                             <br/>
-                            <!-- Temporary -->
-                            <div class="col-sm-6 row form-group px-0">
-                                <button type="button" id="btn_submit" class="btn btn-success col-sm-12">Run</button>
-                            </div>
                             <div class="row">
                             <!--Track Detail-->
                             <div class="offset-md-1 col-sm-4" id="song-detail">
-                            </div>
-
-                            <!--Track list-->
-                            <div class="col-sm-6 px-0">
-                                <div class="list-group song-list">
-
-                                </div>
                             </div>
                         </div>
 

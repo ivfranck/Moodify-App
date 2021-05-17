@@ -1,4 +1,4 @@
-<?php // TODO: AWAITING FINAL DATABASE
+<?php
 class dbConn{
     function dbconnection(): mysqli{
         $hostname = 'ID329136_moodify.db.webhosting.be';

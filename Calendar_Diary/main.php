@@ -32,8 +32,10 @@
 
         <script src="js/process.js"></script>
         <script src="js/getPicture.class.js"></script>
-        <script type="text/javascript" src="Spotify API/Spotify_class.js"></script>
-        <script type="text/javascript" src="js/entries.js"></script>
         </div>
+
+        <script type="text/javascript" src="../js/Spotify API/Spotify_class.js"></script>
+        <script type="text/javascript" src="../js/entries.js"></script>
+        <script type="text/javascript" src="../js/Spotify%20API/JQuery.js"></script>
     </body>
 </html>

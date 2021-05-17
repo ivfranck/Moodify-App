@@ -1,21 +1,13 @@
 <?php
 include_once "header_footer/header.php";
+include_once "includes/getData.php";
 
-if(isset($_SESSION["userId"])){
-    echo "<input type='hidden' id='userId' value=".$_SESSION["userId"].">";
-}
+if (sizeof($run->getPlatlistId())>0){
 ?>
 <div class="container">
 
-        <input type="hidden" id='hidden_token'>
-        <br/>
-        <!-- Temporary -->
-        <div class="col-sm-6 row form-group px-0">
-            <button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Run</button>
-        </div>
-
-
-
+    <input type="hidden" id="hidden_token">
+    <br/>
     <div class="row">
         <!--Track Detail-->
         <div class="offset-md-1 col-sm-4" id="song-detail">
@@ -30,9 +22,26 @@ if(isset($_SESSION["userId"])){
     </div>
 
 </div>
+<?php
+}
+else{
+?>
+    <div class="container">
+
+        <h1>Complete today's diary to view today's recommended tracks</h1>
+
+    </div>
+<?php
+}
+?>
+
 
 
 <script type="text/javascript" src="js/Spotify API/Spotify_class.js"></script>
-<script type="text/javascript" src="js/Spotify%20API/JQuery.js"></script>
+<script>
+    const songfetch = new SongFetchAPI();
+    songfetch.loadApp();
+</script>
+
 </body>
 </html>

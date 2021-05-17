@@ -13,6 +13,8 @@ function showTab(n) {
         document.getElementById("prevBtn").style.display = "inline";
     }
     if (n == (x.length - 1)) {
+        const spotifyapi = new SpotifyAPI;
+        spotifyapi.loadApp();
         document.getElementById("nextBtn").innerHTML = "Submit";
     } else {
         document.getElementById("nextBtn").innerHTML = "Next";

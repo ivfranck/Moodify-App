@@ -5,8 +5,10 @@ class DataTransfer{
     public static $trackNameArtist;
     public static $userId;
 
+
     function __construct(){
-        $this->track = $_POST['track'];
+        $this->track = $_POST['track-info'];
+        $this->playlistid = $_POST["playlistid"];
         $this->conn = DataTransfer::dbConnection();
 
     }
@@ -17,33 +19,38 @@ class DataTransfer{
         return $connClass->dbconnection();
     }
 
-    function addTrack(){
+    function addData(){
 
-        $track = json_decode($this->track);
-        $trackArray = explode(",", $track);
-
+        $trackArray = explode(",", $this->track);
+        $dayNum = date("d",time());
+        $monthNum = date("m",time());
+        $yearNum = date("Y",time());
         self::$userId = $trackArray[2];
         self::$trackNameArtist = $trackArray[0];
         $trackId = $trackArray[1];
 
+        $mood = $_POST["mood"];
+        $journal = $_POST["journal"];
+        $imageid = $_POST["imageid"];
 
-        $sql = "insert into `trackTest` (`userid`,`trackname`, `trackNumber`) values (?, ?, ?);";
+
+        $sql = "insert into `content` (`userid`,`contentday`, `contentmonth`, `contentyear`, `contentmood`, `contenttext`, `contentimageid`, `contentsongname`, `contentsongid`, `contentalbumid`) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         $stmt = mysqli_stmt_init($this->conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../spotify.php?error=stmtfailed");
+            header("Location: ../Calendar_Diary/main.php?error=stmtfailed");
             exit();
         }
 
-        mysqli_stmt_bind_param($stmt, "sss", self::$userId, self::$trackNameArtist, $trackId);
+        mysqli_stmt_bind_param($stmt, "ssssssssss", self::$userId, $dayNum, $monthNum, $yearNum, $mood, $journal, $imageid, self::$trackNameArtist, $trackId, $this->playlistid);
         mysqli_stmt_execute($stmt);
+
+        header("Location: ../Calendar_Diary/main.php?error=none");
+        exit();
     }
 }
-$run = new DataTransfer();
-$run->addTrack();
-
-
-
-
-
+if(isset($_POST["nextBtn"])){
+    $run = new DataTransfer();
+    $run->addData();
+}
 

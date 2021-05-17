@@ -45,6 +45,7 @@ session_start();
         if(isset($_SESSION["userName"])){
             echo "<li><a href='#'>About</a></li>";
             echo "<li><a href='../Calendar_Diary/main.php'>Diary</a></li>";
+            echo "<li><a href='../music.php'>Today's Music</a></li>";
             echo "<li><a href='../authentication/profile.php'>Profile</a></li>";
             echo "<li><a href='../authentication/includes/logout-inc.php'>Logout</a></li>";
         }

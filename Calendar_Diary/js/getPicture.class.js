@@ -56,8 +56,18 @@ document.querySelector('#refreshBtn').addEventListener('click', function(){
     images.getRandom();
     
 })
-
+/*
 function reply_click(clicked_id)
 {
     document.getElementById("picSelect").setAttribute("value", clicked_id);
+}
+
+ */
+function reply_click(clicked_id)
+{
+    var selected_image = "";
+    if(selected_image !== clicked_id){
+        selected_image = clicked_id
+    }
+    document.getElementById("picSelect").value = selected_image;
 }
