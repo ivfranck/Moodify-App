@@ -194,6 +194,7 @@ class SongFetchAPI {
         this.trackName;
         this.trackArtist;
         this.trackId;
+        this.trackinfo = [];
 
     }
 
@@ -242,12 +243,17 @@ class SongFetchAPI {
         return await response.json();
     }
 
-    // get tracks from return object from getTracks()
     async getTrackList(data){
         // get and return track name and id
+        let ele;
         const tracks2 = {};
         const tracksJson = data.items;
         tracksJson.forEach(element => tracks2[element.track.name] = element.track.id);
+
+        for (let i = 0; i < tracksJson.length; i++){
+            ele = {trackid: tracksJson[i].track.id, title: tracksJson[i].track.name, artist: tracksJson[i].track.artists[0].name, image: tracksJson[i].track.album.images[0].url};
+            this.trackinfo.push(ele);
+        }
 
         return tracks2;
     }
@@ -330,7 +336,7 @@ class SongFetchAPI {
         const trackNames = await this.getTrackList(tracks);
 
         // header showing the playlist's name
-        const htmlHeader = `<h2>Top 10 from: <a href="https://open.spotify.com/playlist/${this.playlistId}" target="_blank" rel="noopener noreferrer">${this.playlistName}</a></h2>`;
+        const htmlHeader = `<h2>Top selections from: <a href="https://open.spotify.com/playlist/${this.playlistId}" target="_blank" rel="noopener noreferrer">${this.playlistName}</a></h2>`;
         document.querySelector(this.DOMElements.divSonglist).insertAdjacentHTML('afterbegin' ,htmlHeader);
 
         for (const track in trackNames){
