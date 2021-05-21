@@ -1,17 +1,38 @@
 <?php include_once "header_footer/header.php";?>
-
+<style>
+    #hero {
+        width: 100%;
+        height: 95vh;
+    <?php
+    if(!isset($_SESSION["userName"])){
+    echo "background: url('../images/cover0.jpg') center top no-repeat;";
+    }
+    else{
+        echo "background: url('../images/welcome.jpg') center top no-repeat;";
+    }
+    ?>
+    background-size: cover;
+    position: relative;
+}
+</style>
 <section id="hero">
 
-    <div class="hero-text">
-        <h3>Welcome to Moodify</h3>
-        <p>
-            Mood has to be controlled, Otherwise, it's your master.
-        </p>
-        <?php
-        if(!isset($_SESSION["userName"])){
-            echo "<a href='authentication/signup.php' class='btn-create-account'>Create Account</a>";
-        }
-        ?>
+<div class="hero-text">
+    <?php
+    if(!isset($_SESSION["userName"])){
+        echo "<h3>Welcome to Moodify</h3>
+    <p>
+        Mood has to be controlled, Otherwise, it's your master.
+    </p>";
+        echo "<a href='authentication/signup.php' class='btn-create-account'>Create Account</a>";
+    }
+    else{
+        echo "<h3>Welcome " .$_SESSION["userFirstName"]."</h3>
+    <p>
+        Mood has to be controlled, Otherwise, it's your master.
+    </p>";
+    }
+    ?>
     </div>
 
 
