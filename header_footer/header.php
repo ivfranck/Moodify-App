@@ -47,7 +47,7 @@ session_start();
             echo "<li><a href='#abt'>About</a></li>";
             echo "<li><a href='../Calendar_Diary/main.php'>Diary</a></li>";
             echo "<li><a href='../music.php'><span class='glyphicon glyphicon-music'></span>Today's Music</a></li>";
-            echo "<li><a href='../authentication/profile.php'><i class='fas fa-cog'></i>Account</a></li>";
+            echo "<li><a href='../authentication/profile.php'>Account</a></li>";
             echo "<li><a href='../authentication/includes/logout-inc.php'>Logout</a></li>";
         }
         else{
