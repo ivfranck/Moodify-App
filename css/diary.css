@@ -9,7 +9,7 @@
     text-align: center;
     margin-bottom: 1em;
   }
-  
+
   .entry-textbox {
     width: 20em;
     height: 10em;
@@ -21,11 +21,11 @@
     border: none;
     border-color: none;
   }
-  
+
   .entry-textbox:focus {
     outline: none;
   }
-  
+
   #entryForm .button {
     border: unset;
     border-radius: 10px;
@@ -36,4 +36,3 @@
     background: #1dc8cd;
     border: 2px solid #1dc8cd;
   }
-  

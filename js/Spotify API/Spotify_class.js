@@ -120,17 +120,28 @@ class SpotifyAPI {
             `
             <input type="hidden" id="playlistid" name="playlistid" value="${this.playlistId}">
             <input type="hidden" id="track-info" name="track-info" value="${title} - ${artist},${id},${document.querySelector(this.DOMElements.userSessionId).value}">
-            <div class="row col-sm-12 px-0">
+             
+            <div style="display: flex;position: relative">
+                <div class="artist_Info">
                 <h2>Recommended track:</h2>
-                <img onclick="window.open('https://play.spotify.com/track/${id}', '_blank')" src="${img}" id="${id}" style="cursor:pointer;" alt="Track card"> 
-                       
+                       <div class="song_title">
+                           <label class="lbl_title" >${title}</label>
+                       </div>
+                            
+                       <div class="song_artist">
+                            <label class="lbl_artist">By ${artist}</label>
+                      </div> 
+                </div>
+                
+                <div class="Bg_Image">
+                <img src="${img}" id="${id}" style="cursor:pointer;" alt="Track card">  
+                    <div class="internal_img_details">
+                        <div class="track_Img">
+                            <img onclick="window.open('https://play.spotify.com/track/${id}', '_blank')" src="${img}" id="${id}" style="cursor:pointer;" alt="Track card">                            
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row col-sm-12 px-0">
-                <label class="form-label col-sm-12" >${title}</label>
-            </div>
-            <div class="row col-sm-12 px-0">
-                <label class="form-label col-sm-12">By ${artist}</label>
-            </div> 
             `;
 
         detailDiv.insertAdjacentHTML('beforeend', html)
@@ -172,6 +183,9 @@ class SpotifyAPI {
 =====================================================================================================
 =====================================================================================================
 */
+
+
+
 
 
 
@@ -306,6 +320,7 @@ class SongFetchAPI {
             `;
 
         detailDiv.insertAdjacentHTML('beforeend', html)
+
     }
 
     // store token in a hidden html field to reuse when needed

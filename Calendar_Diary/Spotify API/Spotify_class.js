@@ -130,7 +130,7 @@ class SpotifyAPI {
                 <h2>Recommended track:</h2>
                 <img onclick="window.open('https://play.spotify.com/track/${id}', '_blank')" src="${img}" id="${id}" style="cursor:pointer;" alt="Track card"> 
                 <input type="hidden" value="${id}">       
-            </div>
+            </div> 
             <div class="row col-sm-12 px-0">
                 <label class="form-label col-sm-12">${title}</label>
             </div>

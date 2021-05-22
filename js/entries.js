@@ -1,4 +1,5 @@
 
+
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
@@ -9,12 +10,12 @@ function showTab(n) {
     //... and fix the Previous/Next buttons:
     if (n == 0) {
         document.getElementById("prevBtn").style.display = "none";
+        const spotifyapi = new SpotifyAPI;
+        spotifyapi.loadApp();
     } else {
         document.getElementById("prevBtn").style.display = "inline";
     }
     if (n == (x.length - 1)) {
-        const spotifyapi = new SpotifyAPI;
-        spotifyapi.loadApp();
         document.getElementById("nextBtn").innerHTML = "Submit";
     } else {
         document.getElementById("nextBtn").innerHTML = "Next";
@@ -76,21 +77,22 @@ function fixStepIndicator(n) {
 }
 // array to store all selected words
 var selected_words = [];
-var wrd = document.querySelectorAll("td")
+var wrd = document.querySelectorAll(".card")
 wrd.forEach(item => {
     item.addEventListener("mouseover", function () {
         item.style.cursor = "pointer";
-        item.style.borderRadius = "25px";
-        item.style.backgroundColor = "#1DC8CD";
+        item.style.boxShadow = "5px 5px 10px #E8ECEB,-5px -5px 10px #262626";
     });
     item.addEventListener("mouseout", function () {
-        item.style.backgroundColor = "transparent";
+        item.style.backgroundColor = "";
+        item.style.boxShadow = "";
     });
     item.addEventListener("click", function () {
         // does not add the word if it's already in the array
         if (!selected_words.includes(item.innerText)){
             selected_words.push(item.innerText);
         }
+        item.style.border = "4px solid #8EFBD3";
         // convert to string and place in the input field
         var selection = selected_words.toString();
         document.getElementById("mood").value = selection;

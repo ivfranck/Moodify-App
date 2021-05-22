@@ -1,9 +1,9 @@
 class Pictures {
     constructor(alreadySelectedPics){
-        this.numItemsToGenerate = 6; //how many gallery items you want on the screen
+        this.numItemsToGenerate = 4; //how many gallery items you want on the screen
         this.numImagesAvailable = 10; //how many total images are in the collection you are pulling from
-        this.imageWidth = 280; //image width in pixels
-        this.imageHeight = 280; //image height in pixels
+        this.imageWidth = 180; //image width in pixels
+        this.imageHeight = 320; //image height in pixels
         this.collectionID = 167880; //the collection ID from the original url
         this.DOMelements = {
             galleryContainer : '.gallery-container',
@@ -83,6 +83,7 @@ function reply_click(clicked_id)
     if(selected_image !== clicked_id){
         selected_image = clicked_id
     }
+    document.getElementById(clicked_id).style.boxShadow = "5px 5px 10px #E8ECEB,-5px -5px 10px #262626";
     document.getElementById("picSelect").value = selected_image;
 }
 
