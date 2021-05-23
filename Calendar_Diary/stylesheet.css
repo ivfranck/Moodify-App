@@ -268,7 +268,7 @@ h1, p, td {
     color: black;
     cursor:pointer;
 }
-@media (max-width: 1480px) {
+@media (max-width: 1520px) {
     .card.card{
         line-height: 90px;
         width: 95px;
@@ -401,7 +401,7 @@ input {
     left: 50%;
     transform: translate(-50%,-50%);
 }
-@media (max-width: 1480px) {
+@media (max-width: 1520px) {
     .buttonsNavForm{
         top: 23%;
     }
@@ -491,7 +491,7 @@ textarea.entry-textbox {
     border-color: none;
 
 }
-@media (max-width: 1480px) {
+@media (max-width: 1520px) {
     textarea.entry-textbox {
         height: 325px;
 
@@ -563,7 +563,7 @@ i.fa.fa-frown{
     color:lightgrey ;
 }
 
-@media (max-width: 1480px) {
+@media (max-width: 1520px) {
     .none_entry{
         margin-left: 20%;
         margin-top: 15%;
