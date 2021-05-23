@@ -33,7 +33,7 @@ img {
     margin: 10px;
 }
 .gallery-container {
-    width: 100%;
+    width: 80%;
     height: 300px;
     overflow: hidden;
     position: relative;
@@ -41,7 +41,7 @@ img {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 10px;
-    margin-left:25px;
+    margin-left:10%;
 }
 
 .gallery-item {

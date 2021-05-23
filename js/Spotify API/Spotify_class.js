@@ -121,7 +121,7 @@ class SpotifyAPI {
             <input type="hidden" id="playlistid" name="playlistid" value="${this.playlistId}">
             <input type="hidden" id="track-info" name="track-info" value="${title} - ${artist},${id},${document.querySelector(this.DOMElements.userSessionId).value}">
              
-            <div style="display: flex;position: relative">
+            <div class="spotifyImg_rectrack" >
                 <div class="artist_Info">
                 <h2>Recommended track:</h2>
                        <div class="song_title">
