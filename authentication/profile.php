@@ -18,7 +18,6 @@
             </div>
         </div>
 
-        <!-- todo: needs to be revisited after entries feature-->
 
         <div class="col-sm-6" style="width: 18rem;">
             <div class="card-body">

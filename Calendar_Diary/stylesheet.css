@@ -491,7 +491,7 @@ textarea.entry-textbox {
     border-color: none;
 
 }
-@media (max-width: 1520px) {
+@media (max-width: 1580px) {
     textarea.entry-textbox {
         height: 325px;
 

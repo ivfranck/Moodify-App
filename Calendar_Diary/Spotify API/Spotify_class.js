@@ -1,4 +1,4 @@
-// TODO: SEND NAME OF TRACK TO DATABASE
+
 class SpotifyAPI {
     constructor() {
         this.clientId = '2b4f0820988f4612840cb95cd602e966';
