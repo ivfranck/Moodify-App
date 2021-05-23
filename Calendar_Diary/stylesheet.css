@@ -494,7 +494,6 @@ textarea.entry-textbox {
 @media (max-width: 1480px) {
     textarea.entry-textbox {
         height: 325px;
-        margin-left: 10%;
 
     }
 }
