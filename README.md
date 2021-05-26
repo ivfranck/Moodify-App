@@ -122,22 +122,3 @@ for (let i = 0; i < keywords.length; i++){
 ```
 
 From there, we selected a random playlist from the object and extracted all its contained tracks.
-
-**Saving the track name to the database:**
-
-Once we have the details of the recommended track, we need to store it in the database. To do this we used ajax since the track details are stored in a JS variable. This was sent through a **POST** method to a PHP file where it will be processed and sent
-to the database:
-```
-const userid = document.querySelector(this.DOMElements.userSessionId).value;
-const trackDetails = this.trackName + " - " + this.trackArtist + "," + this.trackId + "," + userid;
-$.ajax({
-    url: "/../includes/dataStorage.php",
-    method: "post",
-    data: {track : JSON.stringify(trackDetails)},
-    success: function(res2){
-        console.log(res2);
-    }
-})
-```
-
-The [dataStorage.php ](includes/dataStorage.php) file contains all functions that sends over the user's data (from dairy entries) to the database.
