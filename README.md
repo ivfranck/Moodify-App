@@ -7,9 +7,7 @@ Inspiration Lab Project
 Moodify is a mood-tracking web application with features such as:
 
 - Diary entry
-- Sleep tracker
 - Music recommendation (Spotify)
-- Monthly mood overview
 
 ---
 
