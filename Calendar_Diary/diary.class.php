@@ -106,8 +106,8 @@ class Diary extends Query
                                 <div class="card card-12">Lighthearted</div>
                             </div>
                             <div class="mood_Mo">
-                                <div class="card card-13">Ominous</div>
-                                <div class="card card-14">Calm</div>
+                                <div class="card card-13">Fearful</div>
+                                <div class="card card-14">Thankful</div>
                                 <div class="card card-15">Angry</div>
                             </div>
                         </div>
