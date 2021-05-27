@@ -141,3 +141,32 @@ $.ajax({
 ```
 
 The [dataStorage.php ](includes/dataStorage.php) file contains all functions that sends over the user's data (from dairy entries) to the database.
+
+
+### Calendar Class:
+On load the year, month and day are initialized using the date() method to show today’s date or GET method if the user has navigated to another month/year.
+
+#### Functions:
+show() : This function uses the month and year either with date() method or GET method to create a navigation bar and the calendar with the days of the month. Then it uses the other private function to get the days in the month and loops over it to create divs for that month.
+
+*** _createNavi() : ***Will create the Prev and Next buttons to change the months.
+
+*** _daysInMonth() : *** Gets the number of days in a given month.
+
+### Db Class:
+This class is responsible for the connection when the Diary class needs new entries (for another month). 
+ connect(): Using the private attributes it creates the connection using PDO extension and specifies to fetch an association array.
+
+### Query Class:
+This extends to the Db class and is responsible for handling the SQL query.
+getQuery(): This function takes the month number, year number, and user ID to fetch all diary data of this user for the specified month and year.
+
+### Diary Class:
+This class extends to the Query class and handles sending the database query using the Query class and then displaying the data with a loop.
+display(): $year and $month are set either with the date() method or with a GET method.
+$diaryContent holds the array. A loop is created using a calculation of the days of month using the $month and $year variables. 
+$diaryContent has a variable for the day of the month the diary entry was created- this day is compared with $i in the loop- if it exists a page is created for the diary entry. 
+If it does not exist, an if statement checks to see if $i = $today ($today being today’s date), if it is a match then the form page is created else a ‘No Entry for this day’ page is created instead.
+
+The HTML is stored in $content and then displayed on the main page using display().
+
