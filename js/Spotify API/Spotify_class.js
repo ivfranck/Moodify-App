@@ -185,12 +185,6 @@ class SpotifyAPI {
 */
 
 
-
-
-
-
-
-
 class SongFetchAPI {
     constructor() {
         this.clientId = '2b4f0820988f4612840cb95cd602e966';
@@ -237,7 +231,6 @@ class SongFetchAPI {
             headers: { 'Authorization' : 'Bearer ' + token}
         });
 
-        // return json object of tracks
         const jsonData = await response.json();
         this.playlistName = jsonData.name;
     }
@@ -258,7 +251,6 @@ class SongFetchAPI {
     }
 
     async getTrackList(data){
-        // get and return track name and id
         let ele;
         const tracks2 = {};
         const tracksJson = data.items;
@@ -281,7 +273,6 @@ class SongFetchAPI {
             headers: { 'Authorization' : 'Bearer ' + token}
         });
 
-        // return json object of tracks
         const jsonData = await response.json();
 
         // get and return the track's details

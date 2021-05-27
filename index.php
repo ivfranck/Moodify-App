@@ -131,7 +131,7 @@
 
     <div class="column">
         <div class="imgBx">
-            <img src="images/bgsmall.jpg" alt="">
+            <img src="images/Team/moses.JPG" alt="">
         </div>
         <div class="details">
             <div class="content">
@@ -149,7 +149,7 @@
     <div class="clearFloat"></div>
     <div class="column">
         <div class="imgBx">
-            <img src="images/bgsmall.jpg" alt="">
+            <img src="images/Team/anass.JPG" alt="">
         </div>
         <div class="details">
             <div class="content">
@@ -168,7 +168,7 @@
     <div class="clearFloat"></div>
     <div class="column">
         <div class="imgBx">
-            <img src="images/bgsmall.jpg" alt="">
+            <img src="images/Team/ivan.JPG" alt="">
         </div>
         <div class="details">
             <div class="content">
@@ -186,7 +186,7 @@
     <div class="clearFloat"></div>
     <div class="column">
         <div class="imgBx">
-            <img src="images/bgsmall.jpg" alt="">
+            <img src="images/Team/ashton.JPG" alt="">
         </div>
         <div class="details">
             <div class="content">

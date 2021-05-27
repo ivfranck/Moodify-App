@@ -7,9 +7,7 @@ Inspiration Lab Project
 Moodify is a mood-tracking web application with features such as:
 
 - Diary entry
-- Sleep tracker
 - Music recommendation (Spotify)
-- Monthly mood overview
 
 ---
 
@@ -142,16 +140,15 @@ $.ajax({
 
 The [dataStorage.php ](includes/dataStorage.php) file contains all functions that sends over the user's data (from dairy entries) to the database.
 
-
 ### Calendar Class:
 On load the year, month and day are initialized using the date() method to show today’s date or GET method if the user has navigated to another month/year.
 
 #### Functions:
 show() : This function uses the month and year either with date() method or GET method to create a navigation bar and the calendar with the days of the month. Then it uses the other private function to get the days in the month and loops over it to create divs for that month.
 
-*** _createNavi() : ***Will create the Prev and Next buttons to change the months.
+***_createNavi() : Will create the Prev and Next buttons to change the months.
 
-*** _daysInMonth() : *** Gets the number of days in a given month.
+***_daysInMonth() : *** Gets the number of days in a given month.
 
 ### Db Class:
 This class is responsible for the connection when the Diary class needs new entries (for another month). 
@@ -169,4 +166,3 @@ $diaryContent has a variable for the day of the month the diary entry was create
 If it does not exist, an if statement checks to see if $i = $today ($today being today’s date), if it is a match then the form page is created else a ‘No Entry for this day’ page is created instead.
 
 The HTML is stored in $content and then displayed on the main page using display().
-
